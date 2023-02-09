@@ -17,11 +17,3 @@ exports.getSingleProducts = (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
-exports.addToCart = (req, res) => {
-  try {
-    const productId = req.params.id;
-    let prod = product.find((person) => person.id == productId);
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
-  }
-};

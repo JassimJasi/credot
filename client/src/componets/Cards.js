@@ -9,15 +9,25 @@ function Cards({ product }) {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    let { data } = await axios.get(
-      `http://localhost:8001/get_product_id/${product.id}`
-    );
-    dispatch(storeData(data));
+    await axios
+      .get(`http://localhost:8001/get_product_id/${product.id}`)
+      .then(async (data) => {
+        dispatch(storeData(data.data));
+        const prod = data.data.id;
+        await axios
+          .post("http://localhost:8001/cart", { prod })
+          .then((res) => {
+            console.log("added to cart");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      });
 
-    let existingObjects = localStorage.getItem("CART");
-    existingObjects = existingObjects ? JSON.parse(existingObjects) : [];
-    existingObjects.push(data);
-    localStorage.setItem("CART", JSON.stringify(existingObjects));
+    // let existingObjects = localStorage.getItem("CART");
+    // existingObjects = existingObjects ? JSON.parse(existingObjects) : [];
+    // existingObjects.push(data);
+    // localStorage.setItem("CART", JSON.stringify(existingObjects));
     Swal.fire("Add to cart");
     navigate("/cart");
   };

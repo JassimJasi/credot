@@ -3,15 +3,15 @@ const dotenv = require("dotenv").config();
 const cors = require("cors");
 
 const productRoute = require("./routes/product");
-//const DB = require("./confiq/connection");
+const DB = require("./confiq/connection");
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// DB.once("open", function () {
-//   console.log("Connected to the MongoDB database");
-// });
+DB.once("open", function () {
+  console.log("Connected to the MongoDB database");
+});
 
 app.use("/", productRoute);
 

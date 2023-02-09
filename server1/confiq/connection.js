@@ -1,11 +1,11 @@
-// const express = require("express");
-// const mongoose = require("mongoose");
-// mongoose.set("strictQuery", false);
+const express = require("express");
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 
-// mongoose.connect(process.env.DATABASE_URL, {
-//   useNewUrlParser: true,
-// });
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+});
 
-// const DB = mongoose.connection;
+const DB = mongoose.connection;
 
-// module.exports = DB;
+module.exports = DB;
