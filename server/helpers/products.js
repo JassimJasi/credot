@@ -1,0 +1,51 @@
+const product = [
+  {
+    id: 10000001,
+    name: "Reebook Men Shoes",
+    description: "mens Shose",
+    price: 500,
+    image: "/image/shose 1.png",
+    category: "Shoes",
+  },
+  {
+    id: 10000002,
+    name: "Nike Men Shoes",
+    description: "mens Shose",
+    price: 500,
+    image: "/image/shose 2.png",
+    category: "Shoes",
+  },
+  {
+    id: 10000003,
+    name: "Addidas Men Shoes",
+    description: "mens Shose",
+    price: 500,
+    image: "/image/shose3.png",
+    category: "Shoes",
+  },
+  {
+    id: 10000004,
+    name: "Nike Bagpack",
+    description: "Nike Bagpack",
+    price: 500,
+    image: "/image/bagpack1.png",
+    category: "Bagpack",
+  },
+  {
+    id: 10000005,
+    name: "Skyback Bagpack",
+    description: "Skyback Bagpack",
+    price: 500,
+    image: "/image/bagpack2.png",
+    category: "Bagpack",
+  },
+  {
+    id: 10000006,
+    name: "Addida Bagpack",
+    description: "Addida Bagpac",
+    price: 500,
+    image: "/image/bagpack3.png",
+    category: "Bagpack",
+  },
+];
+module.exports = product;
